@@ -1,0 +1,181 @@
+/*
+ * CSS code for Game
+ */
+
+
+/*
+ * Common Code for all Platforms
+ */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Styles for platform
+ */
+
+.platform {
+    width: 660px;
+    min-height: 680px;
+    background: #73D7D2;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.platform .card {
+    height: 125px;
+    width: 125px;
+    background: #618CD8;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.platform .card.open {
+    transform: rotateY(0);
+    background: #EED13C;
+    cursor: default;
+}
+
+.platform .card.visible {
+    font-size: 33px;
+}
+
+.platform .card.found {
+    cursor: default;
+    background: #EED13C;
+    font-size: 33px;
+}
+
+/*
+ * Styles for Level panel
+ */
+
+#level-area {
+    display: inline-block;
+    margin: 5px;
+}
+
+#level-area h1 {
+    text-align: center;
+}
+
+
+
+.level-button {
+    background-color: #7fd2e1;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-timer {
+    text-align: left;
+    width: 550px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.score-timer .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-timer .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-timer .right {
+    float: right;
+}
+
+.score-timer #restart {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+/*
+ * Responsive Optimizations 
+ */
+
+@media only screen and (max-width: 700px) {
+	.score-timer {
+        width: 90%;
+    }
+
+    .platform {
+        width: 95%;
+        padding: 16px;
+        min-height: 100vw;
+    }
+
+    .platform .card {
+        width: 20vw;
+        height: 20vw;
+    }
+
+    .level-button {
+        padding: 6px 20px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .score-timer {
+        font-size: 20px;
+    }
+}
